@@ -2,6 +2,9 @@ pipeline {
     options { timestamps() }
 
     agent none
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('arsgoo-dockerhub')
+    }
     stages {
         stage('Check scm') {
             agent any
@@ -13,6 +16,7 @@ pipeline {
             steps {
                 echo "Building ...${BUILD_NUMBER}"
                 echo "Build completed"
+                sh 'docker build -t arsgoo/pawnshop_tests:latest .'
             }
         }
         stage('Test') {
@@ -39,6 +43,21 @@ pipeline {
                     echo "Ops! Tests failed! Try again, please"
                 }
             }
+        }
+        stage('Login') {
+            steps {
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+        stage('Push') {
+            steps {
+                sh 'docker push arsgoo/pawnshop_tests:latest'
+            }
+        }
+    }
+    post {
+        always {
+            sh 'docker logout'
         }
     }
 }
