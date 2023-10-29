@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestGoodsFunctions-20231029144819" tests="6" file=".py" time="0.016" timestamp="2023-10-29T14:48:19" failures="0" errors="0" skipped="1">
+	<testcase classname="TestGoodsFunctions" name="test_add_good_normal" time="0.002" timestamp="2023-10-29T14:48:19" file="Lab3\pawnshop_tests.py" line="14"/>
+	<testcase classname="TestGoodsFunctions" name="test_get_good" time="0.002" timestamp="2023-10-29T14:48:19" file="Lab3\pawnshop_tests.py" line="35"/>
+	<testcase classname="TestGoodsFunctions" name="test_get_goods_amount" time="0.001" timestamp="2023-10-29T14:48:19" file="Lab3\pawnshop_tests.py" line="46"/>
+	<testcase classname="TestGoodsFunctions" name="test_get_total_cost" time="0.000" timestamp="2023-10-29T14:48:19" file="Lab3\pawnshop_tests.py" line="50"/>
+	<testcase classname="TestGoodsFunctions" name="test_remove_good" time="0.000" timestamp="2023-10-29T14:48:19" file="Lab3\pawnshop_tests.py" line="24"/>
+	<testcase classname="TestGoodsFunctions" name="test_add_good_wrong" time="0.010" timestamp="2023-10-29T14:48:19" file="Lab3\pawnshop_tests.py" line="18">
+		<skipped type="XFAIL" message="expected failure: (&lt;class 'TypeError'&gt;, TypeError('Invalid data type'), &lt;traceback object at 0x000002BF612C5540&gt;)"/>
+	</testcase>
+</testsuite>
