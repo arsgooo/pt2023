@@ -15,9 +15,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building ...${BUILD_NUMBER}"
-                echo "Build completed"
                 sh 'cp Lab3/Dockerfile .'
                 sh 'docker build -t arsgoo/pawnshop_tests:latest .'
+                echo "Build completed"
             }
         }
         stage('Test') {
