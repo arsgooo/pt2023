@@ -39,7 +39,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run tests
       run: |
-        python3 -m unittest Lab4/pawnshop_tests.py
+        python3 -m unittest ../../Lab4/pawnshop_tests.py
       env:
         CI: true    
         
